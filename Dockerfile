@@ -1,4 +1,4 @@
-ARG BUILDKIT_TAG="v0.9.2"
+ARG BUILDKIT_TAG="v0.9.3"
 FROM moby/buildkit:${BUILDKIT_TAG}
 
 RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories &&\
