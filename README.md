@@ -12,5 +12,5 @@ Docker image that extends the default buildkit images
 
 ## Differences
 
-* Adds entrypoint script with support for cgroups v2
+* Adds entrypoint script with support for cgroups v2 nesting
 * Adds `pigz` for better multi-threaded compression/decompression
