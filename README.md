@@ -13,5 +13,4 @@ Docker image that extends the default buildkit images
 ## Differences
 
 * Adds entrypoint script with support for cgroups v2
-* Updates `runc` to the [latest from Alpine edge](https://pkgs.alpinelinux.org/packages?name=runc&branch=edge&repo=community&arch=x86_64)
 * Adds `pigz` for better multi-threaded compression/decompression

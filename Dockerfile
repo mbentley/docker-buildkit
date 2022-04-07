@@ -8,11 +8,7 @@ RUN apk --no-cache upgrade --purge
 FROM scratch
 COPY --from=upstream / /
 
-RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories &&\
-  apk add --no-cache bash pigz runc@edge &&\
-  cd /usr/bin &&\
-  rm buildkit-runc &&\
-  ln -s runc buildkit-runc
+RUN apk add --no-cache bash pigz
 
 COPY entrypoint.sh /entrypoint.sh
 
