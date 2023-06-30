@@ -7,8 +7,8 @@ Docker image that extends the default buildkit images
 These tags are multi-arch enabled for `amd64`, `arm64`, and `armv7l`.  In addition, there are architecture specific tags in the form of `<version>-<architecture>`.
 
 * `master` - maps to `moby/buildkit:master`
-* `latest`, `v0.11`, `v0.11.6` - maps to `moby/buildkit:v0.11.6`
-* `v0.11.5` - maps to `moby/buildkit:v0.11.5`
+* `latest`, `v0.12`, `v0.12.0` - maps to `moby/buildkit:v0.12.0`
+* `v0.11`, `v0.11.6` - maps to `moby/buildkit:v0.11.6`
 * `v0.10`, `v0.10.6` - maps to `moby/buildkit:v0.10.6`
 
 ## Archived Tags
@@ -17,6 +17,7 @@ These tags are still available but are no longer updated:
 
 ### `v0.11.x`
 
+* `v0.11.5` - maps to `moby/buildkit:v0.11.5`
 * `v0.11.4` - maps to `moby/buildkit:v0.11.4`
 * `v0.11.3` - maps to `moby/buildkit:v0.11.3`
 * `v0.11.2` - maps to `moby/buildkit:v0.11.2`
