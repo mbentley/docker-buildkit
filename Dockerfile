@@ -1,5 +1,5 @@
 # start from upstream buildkit image & upgrade all packages
-ARG BUILDKIT_TAG="v0.11.6"
+ARG BUILDKIT_TAG="v0.12.0"
 FROM moby/buildkit:${BUILDKIT_TAG} AS upstream
 
 RUN apk --no-cache upgrade --purge
