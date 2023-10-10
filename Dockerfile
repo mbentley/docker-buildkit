@@ -8,8 +8,6 @@ RUN apk --no-cache upgrade --purge
 FROM scratch
 COPY --from=upstream / /
 
-RUN apk add --no-cache bash pigz
-
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh","buildkitd"]
