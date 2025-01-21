@@ -6,19 +6,25 @@ Docker image that extends the default buildkit images
 
 These tags are multi-arch enabled for `amd64` and `arm64`. In addition, there are architecture specific tags in the form of `<version>-<architecture>`.
 
-* `latest`, `v0.18`, `v0.18.2` - maps to `moby/buildkit:v0.18.2`
-* `v0.18.1` - maps to `moby/buildkit:v0.18.1`
-* `v0.18.0` - maps to `moby/buildkit:v0.18.0`
-* `v0.17`, `v0.17.0` - maps to `moby/buildkit:v0.17.0`
-* `v0.16`, `v0.16.0` - maps to `moby/buildkit:v0.16.0`
+* `latest`, `v0.19`, `v0.18.0` - maps to `moby/buildkit:v0.19.0`
+* `v0.18`, `v0.18.2` - maps to `moby/buildkit:v0.18.2`
 
 ## Archived Tags
 
 These tags are still available but are no longer updated:
 
-### `master`
+### `v0.18.x`
 
-* `master` - maps to `moby/buildkit:master`
+* `v0.18.1` - maps to `moby/buildkit:v0.18.1`
+* `v0.18.0` - maps to `moby/buildkit:v0.18.0`
+
+### `v0.17.x`
+
+* `v0.17`, `v0.17.0` - maps to `moby/buildkit:v0.17.0`
+
+### `v0.16.x`
+
+* `v0.16`, `v0.16.0` - maps to `moby/buildkit:v0.16.0`
 
 ### `v0.15.x`
 
@@ -74,6 +80,10 @@ These tags are still available but are no longer updated:
 ### `v0.7.x`
 
 * `v0.7`, `v0.7.2` - maps to `moby/buildkit:v0.7.2`
+
+### `master`
+
+* `master` - maps to `moby/buildkit:master`
 
 ## Differences
 
