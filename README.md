@@ -8,7 +8,8 @@ These tags are multi-arch enabled for `amd64` and `arm64`. In addition, there ar
 
 ### `v0.20.x`
 
-* `latest`, `v0.20`, `v0.20.1` - maps to `moby/buildkit:v0.20.1`
+* `latest`, `v0.20`, `v0.20.2` - maps to `moby/buildkit:v0.20.2`
+* `v0.20.1`, - maps to `moby/buildkit:v0.20.1`
 * `v0.20.0`, - maps to `moby/buildkit:v0.20.0`
 
 ### `v0.19.x`
