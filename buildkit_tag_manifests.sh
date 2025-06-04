@@ -4,7 +4,15 @@ set -e
 
 main() {
   # set expected major.minor tags
-  EXPECTED_MAJOR_MINOR_TAGS="0.22 0.21 0.20"
+  EXPECTED_MAJOR_MINOR_TAGS="${*}"
+
+  # make sure EXPECTED_MAJOR_MINOR_TAGS isn't empty
+  if [ -z "${EXPECTED_MAJOR_MINOR_TAGS}" ]
+  then
+    echo "ERROR: you must past one or more major.minor tags to create"
+    echo "  ex: ${0} 0.22 0.21 0.20"
+    exit 1
+  fi
 
   # get last 100 release tags from GitHub; filter out rc and beta releases
   BUILDKIT_RELEASES="$(wget -q -O - "https://api.github.com/repos/moby/buildkit/tags?per_page=100&page=1" | jq -r '.[] | select((.name | contains("-rc") | not) and (.name | contains("-beta") | not)) | .name' | sort --version-sort -r)"
@@ -116,8 +124,7 @@ tag_manifest() {
   # create the new manifest and push the manifest to docker hub
   echo -n "Create new manifest and push to Docker Hub..."
   # shellcheck disable=SC2046
-  #docker buildx imagetools create --progress plain -t "mbentley/buildkit:v${DESTINATION_TAG}" $(for TAG_DIGEST in ${TAG_DIGESTS}; do echo -n "moby/buildkit@${TAG_DIGEST} "; done)
-  docker buildx imagetools create --progress plain -t "mbentleyvmware/buildkit-test:v${DESTINATION_TAG}" $(for TAG_DIGEST in ${TAG_DIGESTS}; do echo -n "moby/buildkit@${TAG_DIGEST} "; done)
+  docker buildx imagetools create --progress plain -t "mbentley/buildkit:v${DESTINATION_TAG}" $(for TAG_DIGEST in ${TAG_DIGESTS}; do echo -n "moby/buildkit@${TAG_DIGEST} "; done)
 
   echo -e "done\n"
 }
