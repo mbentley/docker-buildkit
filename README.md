@@ -2,28 +2,19 @@
 
 Docker image that extends the default buildkit images
 
+Versions prior to v0.20 were still built by me, extending the original moby/buildkit images. Starting with v0.20 and beyond, there is no need to extend the image as the cgroup management is handled within buildkit.
+
+The challenge still exists that there are no `major.minor` tagged images for buildkit so that's what this repository is continuing to provide.
+
 ## Tags
 
-These tags are multi-arch enabled for `amd64` and `arm64`. In addition, there are architecture specific tags in the form of `<version>-<architecture>`.
+Using [buildkit_tag_manifests.sh](./buildkit_tag_manifests.sh), I am just re-writing the manifests from the upstream moby/buildkit repo so that there are major.minor tags in additional to the major.minor.bugfix tags. For example, if `v0.22.3` is the latest version, a `v0.22` tag is created to maps to `v0.22.3` and then a `v0.22.4` comes out, it's manifest will be written to the `v0.22` tag.
 
-### `v0.22.x`
-
-* `latest`, `v0.22`, `v0.22.0` - maps to `moby/buildkit:v0.22.0`
-
-### `v0.21.x`
-
-* `v0.21`, `v0.21.1` - maps to `moby/buildkit:v0.21.1`
-* `v0.21.0` - maps to `moby/buildkit:v0.21.0`
-
-### `v0.20.x`
-
-* ``v0.20`, `v0.20.2` - maps to `moby/buildkit:v0.20.2`
-* `v0.20.1`, - maps to `moby/buildkit:v0.20.1`
-* `v0.20.0`, - maps to `moby/buildkit:v0.20.0`
+There is no `latest` tags of any sort in this repo and that's done on purpose.
 
 ## Archived Tags
 
-These tags are still available but are no longer updated:
+These tags are multi-arch enabled for `amd64` and `arm64`. In addition, there are architecture specific tags in the form of `<version>-<architecture>`. These tags are still available but are no longer updated:
 
 ### `v0.19.x`
 
